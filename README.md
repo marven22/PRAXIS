@@ -1,6 +1,6 @@
 # PRAXIS
 
-Production-ready runner for PRAXIS-aligned MIT Indoor experiments, organized as a small
+Runner for PRAXIS-aligned MIT Indoor experiments, organized as a small
 package under `praxis/` with a thin CLI wrapper in `praxis_runner.py`.
 
 ## Usage
