@@ -636,10 +636,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--batch-size", type=int, default=32)
 
     p.add_argument("--size-min", type=int, default=400)
-    p.add_argument("--size-max", type=int, default=2400)
+    p.add_argument("--size-max", type=int, default=2000)
     p.add_argument("--size-grid", type=int, default=5)
     p.add_argument("--aug-min", type=float, default=0.0)
-    p.add_argument("--aug-max", type=float, default=1.0)
+    p.add_argument("--aug-max", type=float, default=0.5)
     p.add_argument("--aug-grid", type=int, default=5)
 
     p.add_argument("--size-test", type=int, default=800)
@@ -649,7 +649,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--probe-seed", type=int, default=0)
     p.add_argument("--probe-batches", type=int, default=5)
 
-    p.add_argument("--iters", type=int, default=6)
+    p.add_argument("--iters", type=int, default=10)
     p.add_argument("--group-size", type=int, default=3)
     p.add_argument("--seeds", type=int, nargs="+", default=[0])
 
@@ -684,7 +684,7 @@ def parse_args() -> argparse.Namespace:
 
     p.add_argument("--enable-gpt", action="store_true")
     p.add_argument("--gpt-provider", type=str, default="openai", choices=["openai", "azure"])
-    p.add_argument("--gpt-model", type=str, default="gpt-4o-mini")
+    p.add_argument("--gpt-model", type=str, default="gpt-4o")
     p.add_argument("--gpt-every", type=int, default=5)
     p.add_argument("--gpt-max-new-programs", type=int, default=4)
     p.add_argument("--gpt-temperature", type=float, default=0.4)
@@ -696,9 +696,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--robust-max-batches", type=int, default=3)
     p.add_argument("--cvar-alpha", type=float, default=0.10)
 
-    p.add_argument("--heldout-sizes", type=int, nargs="+", default=[2000])
+    p.add_argument("--heldout-sizes", type=int, nargs="+", default=[2400])
     p.add_argument("--heldout-augs", type=float, nargs="+", default=[0.5])
-    p.add_argument("--heldout-severities", type=float, nargs="+", default=[0.15, 0.45, 0.75])
+    p.add_argument("--heldout-severities", type=float, nargs="+", default=[0.5, 0.75, 0.85])
     p.add_argument("--heldout-eval-every", type=int, default=10)
     p.add_argument("--heldout-size-test", type=int, default=800)
     p.add_argument("--heldout-max-batches", type=int, default=3)
